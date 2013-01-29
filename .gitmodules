@@ -1,0 +1,3 @@
+[submodule "pronamic-framework"]
+	path = pronamic-framework
+	url = git@github.com:pronamic/pronamic-framework
