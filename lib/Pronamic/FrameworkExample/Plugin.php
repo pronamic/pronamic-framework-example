@@ -74,6 +74,16 @@ class Pronamic_FrameworkExample_Plugin {
             ->set_title( 'Extra Description' )
             ->set_type( 'textarea' );
 
+        $editor = new Pronamic_Settings_Field( 'pfe_editor' );
+        $editor
+            ->set_title( 'Editor' )
+            ->set_type( 'editor' );
+
+        $color_picker = new Pronamic_Settings_Field( 'pfe_bg_color' );
+        $color_picker
+            ->set_title( 'BG Color' )
+            ->set_type( 'colorpicker' );
+
         // Register
         $common_settings
             ->set_field_renderer( $renderer )
@@ -82,6 +92,8 @@ class Pronamic_FrameworkExample_Plugin {
             ->add_field( $extra_description )
             ->add_field( $image_upload )
             ->add_field( $logo_upload )
+            ->add_field( $color_picker )
+            ->add_field( $editor )
             ->register( 'pfe_settings' );
     }
 
