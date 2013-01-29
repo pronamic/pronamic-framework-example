@@ -42,10 +42,34 @@ class Pronamic_FrameworkExample_Plugin {
             ->set_title( 'Extra Title' )
             ->set_type( 'text' );
 
+        $yes_no = new Pronamic_Settings_Field( 'pfe_yes_no' );
+        $yes_no
+            ->set_title( 'Yes/No?' )
+            ->set_type( 'select' )
+            ->set_argument( 'options', 
+                array(
+                    array(
+                        'text' => 'Yes',
+                        'value' => 1
+                    ),
+                    array(
+                        'text' => 'No',
+                        'value' => 0
+                    )
+                )
+            );
+
+        $extra_description = new Pronamic_Settings_Field( 'pfe_extra_description' );
+        $extra_description
+            ->set_title( 'Extra Description' )
+            ->set_type( 'textarea' );
+
         // Register
         $common_settings
             ->set_field_renderer( $renderer )
             ->add_field( $extra_title )
+            ->add_field( $yes_no )
+            ->add_field( $extra_description )
             ->register( 'pfe_settings' );
     }
 
