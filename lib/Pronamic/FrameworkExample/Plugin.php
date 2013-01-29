@@ -59,6 +59,16 @@ class Pronamic_FrameworkExample_Plugin {
                 )
             );
 
+        $image_upload = new Pronamic_Settings_Field( 'pfe_background_image' );
+        $image_upload
+            ->set_title( 'BG Image' )
+            ->set_type( 'upload' );
+
+        $logo_upload = new Pronamic_Settings_Field( 'pfe_logo_image' );
+        $logo_upload
+            ->set_title( 'Logo Image' )
+            ->set_type( 'upload' );
+
         $extra_description = new Pronamic_Settings_Field( 'pfe_extra_description' );
         $extra_description
             ->set_title( 'Extra Description' )
@@ -70,6 +80,8 @@ class Pronamic_FrameworkExample_Plugin {
             ->add_field( $extra_title )
             ->add_field( $yes_no )
             ->add_field( $extra_description )
+            ->add_field( $image_upload )
+            ->add_field( $logo_upload )
             ->register( 'pfe_settings' );
     }
 
